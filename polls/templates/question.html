@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Polling site</title>
+  </head>
+  <body>
+    <nav class='navbar navbar-light' style='background-color: #515c63'>
+      <span class="navbar-brand ml-12 mx-auto pt-12 h2">Pollster</span>
+    </nav>
+    <br>
+    <h3 class = "heading" style="margin-left: 540px">Poll Questions</h3>
+    {% for question in poll_questions %}
+      <div class="card" style="width: 520px; margin-left: 390px">
+        <div class="card-body">
+          <p class="card-text">{{ question.question}}.</p>
+            <a href="{% url 'polls:question_option' question.id %}" class="btn btn-primary">Vote</a>
+              <!-- <a href="{% url 'polls:results' question.id %}" class="btn btn-dark">Results</a> -->
+            </div>
+          </div>
+          <br>
+          {%endfor%}
+        </body>
+    </html>
